@@ -2,11 +2,10 @@ import words_fetcher
 import random
 
 
-<<<<<<< HEAD
-def congratulate_user():
-=======
+
+
+
 def congratulate_user(guesses):
->>>>>>> improvements
     print("=============================")
     print(f"Congratulations, you won! your words: {guesses}")
     print("=============================")
@@ -16,10 +15,10 @@ def is_game_over():
     return guessed == WORDS_TO_WIN or errors == ERRORS_TO_LOSE
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> improvements
+
+
+
 def guess_is_valid(candidate):
     for letter in candidate:
         if letter not in word:
