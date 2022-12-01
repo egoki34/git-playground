@@ -57,7 +57,7 @@ while not is_game_over():
             errors += 1
             print(f"Oops :( No such word, you have {ERRORS_TO_LOSE - errors} lives more")
             if errors == 3:
-                print("вы проиграли")
+                print("you lose!!!!!!!!!!!!!!!")
                 break
     else:
-        print("вы уже вводили такое слово, измените его пожалуйта")
+        print("you already entered such a word, please change it")
