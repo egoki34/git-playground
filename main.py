@@ -2,7 +2,11 @@ import words_fetcher
 import random
 
 
+<<<<<<< HEAD
 def congratulate_user():
+=======
+def congratulate_user(guesses):
+>>>>>>> improvements
     print("=============================")
     print(f"Congratulations, you won! your words: {guesses}")
     print("=============================")
@@ -12,6 +16,10 @@ def is_game_over():
     return guessed == WORDS_TO_WIN or errors == ERRORS_TO_LOSE
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> improvements
 def guess_is_valid(candidate):
     for letter in candidate:
         if letter not in word:
@@ -42,10 +50,8 @@ print(f"Your word is '{word}'")
 
 while not is_game_over():
     guess = input("Your next take: ")
-
     if not guess_is_valid(guess):
         continue
-
     if guess in full_list:
         guessed += 1
         guesses.append(guess)
@@ -53,6 +59,21 @@ while not is_game_over():
             congratulate_user()
             exit()
         print(f"That's right! {WORDS_TO_WIN - guessed} to go")
+        if not guess_is_valid(guess):
+            continue
+        if guess not in guesses:
+            if guess in full_list:
+                guessed += 1
+                guesses.append(guess)
+                if guessed == WORDS_TO_WIN:
+                    congratulate_user(guesses)
+                    exit()
+                print(f"That's right! {WORDS_TO_WIN - guessed} to go")
+            else:
+                errors += 1
+                print(f"Oops :( No such word, you have {ERRORS_TO_LOSE - errors} lives more")
+                if errors == 3:
+                    print("you lose!!!!!!!!!!!!!!!")
+                    break
     else:
-        errors += 1
-        print(f"Oops :( No such word, you have {ERRORS_TO_LOSE - errors} lives more")
+        print("you already entered such a word, please change it")
